@@ -19,8 +19,7 @@ public class TikiIslandController : Controller
     {
         return View();
     }
-
-    [Route("niveaux/{niveau}")]
+    [Route("TikiIsland/Niveaux/{niveau}")]
     public IActionResult Niveaux(string niveau)
     {
         var path = "/swf/tiki-island/niveaux/" + niveau;

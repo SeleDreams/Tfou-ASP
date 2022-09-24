@@ -2,10 +2,10 @@
 @{
     ViewData["Title"] = "Tiki Island";
     var Request = Context.Request;
-    string location = new Uri($"{Request.Scheme}://{Request.Host}").AbsoluteUri;
-    location = location.Remove(location.Length - 1);
+    var location = Uri.EscapeDataString(new Uri($"{Request.Scheme}://{Request.Host}").OriginalString);
+    var full_location = Uri.EscapeDataString(new Uri($"{Request.Scheme}://{Request.Host}{Request.Path}").OriginalString + "/niveaux");
 }
-<a href="~">
+<a href='@Url.Action("Index","Home")'>
     <p>Retour</p>
 </a>
 <object type="application/x-shockwave-flash" bgcolor="#ffffff" data='@Url.Action("Game")' width="960" height="560"
@@ -15,5 +15,5 @@
     <param name="allowScriptAccess" value="always">
     <param name="wmode" value="transparent">
     <param name="flashvars"
-        value='USER_TICKET=00000000000000000000000000000000:0000000000000000000000000000000000000000&amp;urlmedia=http%3A%2F%2Fs.tfou.fr%2F&amp;CON_ID=4049969&amp;HOST_API_DYN=@location&HOST_API=@location&HOST_API_DYN_ELEMENT=@location&IMG_BACKGROUND=&amp;PARAMS_XML=%3Cswfs%3E%0D%0A++++%3Cswf+id%3D%22cinematique_fin%22%3Eniveaux%2F10606116xfjhr.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22fichier_base2%22%3Eniveaux%2F10606115ygudm.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22intro_def%22%3Eniveaux%2F10606114iojjp.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22jeu_casino%22%3Eniveaux%2F10606112lmrij.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22jeu_de_lavion%22%3Eniveaux%2F10606111cutbb.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22jeu_des_arbres%22%3Eniveaux%2F10606107qdwuh.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22jeu_fuite%22%3Eniveaux%2F10606105zpnsn.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22jeu_grotte%22%3Eniveaux%2F10606103vzxto.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22jeu_volcan%22%3Eniveaux%2F10606102tvgxl.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22jeu_volcannuit%22%3Eniveaux%2F10606100ypupl.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22retour_poulbill%22%3Eniveaux%2F10606099qkqqx.swf%3C%2Fswf%3E%0D%0A%3C%2Fswfs%3E'>
+        value='USER_TICKET=00000000000000000000000000000000:0000000000000000000000000000000000000000&amp;urlmedia=http%3A%2F%2Fs.tfou.fr%2F&amp;CON_ID=4049969&amp;HOST_API_DYN=@(location)&HOST_API=@(location)&HOST_API_DYN_ELEMENT=@(location)&IMG_BACKGROUND=&amp;PARAMS_XML=%3Cswfs%3E%0D%0A++++%3Cswf+id%3D%22cinematique_fin%22%3E@(full_location)%2F10606116xfjhr.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22fichier_base2%22%3E@(full_location)%2F10606115ygudm.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22intro_def%22%3E@(full_location)%2F10606114iojjp.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22jeu_casino%22%3E@(full_location)%2F10606112lmrij.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22jeu_de_lavion%22%3E@(full_location)%2F10606111cutbb.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22jeu_des_arbres%22%3E@(full_location)%2F10606107qdwuh.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22jeu_fuite%22%3E@(full_location)%2F10606105zpnsn.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22jeu_grotte%22%3E@(full_location)%2F10606103vzxto.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22jeu_volcan%22%3E@(full_location)%2F10606102tvgxl.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22jeu_volcannuit%22%3E@(full_location)%2F10606100ypupl.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22retour_poulbill%22%3E@(full_location)%2F10606099qkqqx.swf%3C%2Fswf%3E%0D%0A%3C%2Fswfs%3E'>
 </object>

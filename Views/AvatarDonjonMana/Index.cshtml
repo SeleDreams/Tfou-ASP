@@ -2,9 +2,10 @@
 @{
     ViewData["Title"] = "Avatar Donjon Mana";
     var Request = Context.Request;
-    var location = new Uri($"{Request.Scheme}://{Request.Host}");
+    var location = Uri.EscapeDataString(new Uri($"{Request.Scheme}://{Request.Host}").OriginalString);
+    var full_location = Uri.EscapeDataString(new Uri($"{Request.Scheme}://{Request.Host}{Request.Path}").OriginalString + "/niveaux");
 }
-<a href="~">
+<a href='@Url.Action("Index","Home")'>
     <p>Retour</p>
 </a>
 <object type="application/x-shockwave-flash" bgcolor="#ffffff" data='@Url.Action("Game")' width="960" height="560"
@@ -14,5 +15,5 @@
     <param name="allowScriptAccess" value="always">
     <param name="wmode" value="transparent">
     <param name="flashvars"
-        value='USER_TICKET=00000000000000000000000000000000:0000000000000000000000000000000000000000&amp;urlmedia=http%3A%2F%2Fs.tfou.fr%2F&amp;CON_ID=4049969&amp;HOST_API_DYN=@location&HOST_API=@location&HOST_API_DYN_ELEMENT=@location&IMG_BACKGROUND=&amp;PARAMS_XML=%3Cswfs%3E%0D%0A++++%3Cswf+id%3D%22poursuite%22%3Eniveaux%2F10605326scdvg.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22prison%22%3Eniveaux%2F10605324qqyow.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22serrure%22%3Eniveaux%2F10605321elbst.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22souris_niv2%22%3Eniveaux%2F10605319hcovf.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22training%22%3Eniveaux%2F10605318rvrtz.swf%3C%2Fswf%3E%0D%0A%3C%2Fswfs%3E'>
+        value='USER_TICKET=00000000000000000000000000000000:0000000000000000000000000000000000000000&amp;urlmedia=http%3A%2F%2Fs.tfou.fr%2F&amp;CON_ID=4049969&amp;HOST_API_DYN=@(location)&HOST_API=@(location)&HOST_API_DYN_ELEMENT=@(location)&IMG_BACKGROUND=&amp;PARAMS_XML=%3Cswfs%3E%0D%0A++++%3Cswf+id%3D%22poursuite%22%3E@(full_location)%2F10605326scdvg.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22prison%22%3E@(full_location)%2F10605324qqyow.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22serrure%22%3E@(full_location)%2F10605321elbst.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22souris_niv2%22%3E@(full_location)%2F10605319hcovf.swf%3C%2Fswf%3E%0D%0A++++%3Cswf+id%3D%22training%22%3E@(full_location)%2F10605318rvrtz.swf%3C%2Fswf%3E%0D%0A%3C%2Fswfs%3E'>
 </object>

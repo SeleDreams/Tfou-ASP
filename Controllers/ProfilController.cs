@@ -15,8 +15,8 @@ public class ProfilController : Controller
         _logger = logger;
     }
 
-    [Route("profil/web/ticket/{ticketId}/output/xml")]
-    public IActionResult Xml(string ticketId)
+    [Route("profil/{*any}")]
+    public IActionResult Xml()
     {
         //return Content("Valid routing for ID : " + ticketId);
         return File("/profil.xml", "text/xml");

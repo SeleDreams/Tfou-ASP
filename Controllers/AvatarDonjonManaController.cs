@@ -26,6 +26,13 @@ public class AvatarDonjonManaController : Controller
         return File(path, "application/x-shockwave-flash");
     }
 
+    [Route("AvatarDonjonMana/Niveaux/{niveau}")]
+    public IActionResult Niveaux(string niveau)
+    {
+        var path = "/swf/avatar-donjon-mana/niveaux/" + niveau;
+        return File(path, "application/x-shockwave-flash");
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
