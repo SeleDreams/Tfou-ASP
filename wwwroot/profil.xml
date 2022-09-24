@@ -1,0 +1,21 @@
+<doc>
+    <element>
+        <nickname>Test</nickname>
+        <age>99</age>
+        <gender>male</gender>
+        <tribu>
+            <name>mana</name>
+            <conId>0</conId>
+        </tribu>
+        <avatar>
+            <hatId>094</hatId>
+            <faceId>193</faceId>
+            <bodyId>312</bodyId>
+            <legsId>458</legsId>
+        </avatar>
+        <tfizz>0</tfizz>
+        <friend>0</friend>
+        <waitingFriend>0</waitingFriend>
+        <badge>0</badge>
+    </element>
+</doc>

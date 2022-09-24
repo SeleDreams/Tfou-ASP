@@ -1,0 +1,37 @@
+<items>
+    <nickname>
+        <item>Test</item>
+    </nickname>
+    <item>
+        <age>99</age>
+    </item>
+    <item>
+        <gender>male</gender>
+    </item>
+    <item>
+        <tribu>
+            <name>"mana"</name>
+            <conId>0</conId>
+        </tribu>
+    </item>
+    <item>
+        <avatar>
+            <hatId>094</hatId>
+            <faceId>193</faceId>
+            <bodyId>312</bodyId>
+            <legsId>458</legsId>
+        </avatar>
+    </item>
+    <item>
+        <tfizz>0</tfizz>
+    </item>
+    <item>
+        <friend>0</friend>
+    </item>
+    <item>
+        <waitingFriend>0</waitingFriend>
+    </item>
+    <item>
+        <badge>0</badge>
+    </item>
+</items>
