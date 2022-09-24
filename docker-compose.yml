@@ -1,0 +1,16 @@
+﻿version: "3.7"
+
+services:
+  app:
+    image: mcr.microsoft.com/dotnet/sdk
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/app
+    command: dotnet run --project /app/TfouFlash.csproj
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+
+volumes:
+  app-data:
+  db-data:
